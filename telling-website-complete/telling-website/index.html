@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6d2638">
+<meta name="description" content="Telling — speak freely, stay anonymous. Explore confessions, friends, and chat rooms.">
+<title>Telling — Speak Freely. Stay Anonymous.</title>
+<style>
+:root{ --bg: #fff8f3;
+  --surface: #ffffff;
+  --surface-soft: #f9eee9;
+  --ink: #321b20;
+  --muted: #897477;
+  --accent: #b96766;
+  --accent-soft: #f1b18f;
+  --line: #ead7d0;
+  --white: #ffffff;
+  --violet: var(--accent);
+  --violet2: var(--accent-soft);}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}
+header{height:82px;display:flex;align-items:center;justify-content:space-between;gap:22px;background:#ffffffed;position:sticky;top:0;z-index:10;border-bottom:1px solid #f0eef9;backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:25px;letter-spacing:-1px}.logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(140deg,var(--violet),var(--violet2));display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 8px 18px #6847f52d}.brand span:last-child{color:var(--violet)}
+nav{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:750;color:#625e7e}nav a:not(.btn):hover{color:var(--violet)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;padding:14px 21px;font-size:13px;font-weight:850;transition:transform .2s,box-shadow .2s;border:0;cursor:pointer}.btn:hover{transform:translateY(-2px);box-shadow:0 12px 25px #5033d52a}.primary{background:linear-gradient(115deg,var(--violet),var(--violet2));color:white;box-shadow:0 9px 20px #6847f52c}.outline{border:1px solid #c9c0ff;background:#fff;color:var(--violet)}
+.menu{display:none;background:none;border:0;color:var(--ink);font-size:26px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#f4f1ff 0%,#f8f6ff 50%,#fff0fa 100%);min-height:620px}.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:48px;padding-top:62px;padding-bottom:68px}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #e4ddff;border-radius:99px;padding:8px 13px;color:var(--violet);background:#ffffffa8;font-size:11px;font-weight:850;letter-spacing:.5px}.eyebrow i{width:7px;height:7px;background:#a06bff;border-radius:50%}h1{font-size:clamp(46px,5.6vw,76px);line-height:1.02;letter-spacing:-4px;margin:23px 0 20px;font-weight:900}.gradient-text{background:linear-gradient(100deg,#6744f5,#bd54d6,#ed70b7);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{max-width:520px;color:#77738f;font-size:15px;line-height:1.9}.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.fine{font-size:11px;color:#88849e;margin-top:19px}.hero-art{min-height:480px;position:relative;display:grid;place-items:center}.orb{position:absolute;width:410px;height:410px;border-radius:50%;background:linear-gradient(145deg,#dcd3ff,#f8c5ed);filter:saturate(1.04)}.orb:after{content:"";position:absolute;inset:22px;border:1px solid #fff9;border-radius:50%}.device{z-index:2;width:255px;height:445px;background:#211d3c;padding:7px;border-radius:36px;box-shadow:0 28px 70px #3b248a38;transform:rotate(3deg);position:relative}.device:before{content:"";position:absolute;z-index:4;top:8px;left:50%;transform:translateX(-50%);width:75px;height:15px;border-radius:20px;background:#211d3c}.device-screen{height:100%;overflow:hidden;border-radius:29px;background:#f8f7ff;position:relative}.device-screen img{width:100%;height:100%;object-fit:cover;object-position:top}.float-card{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #eeebfa;border-radius:15px;padding:12px 15px;box-shadow:0 14px 32px #32216818;font-size:11px;font-weight:800}.float-card .mini{width:31px;height:31px;border-radius:10px;background:#eee9ff;color:var(--violet);display:grid;place-items:center;font-size:17px}.float-one{left:-5px;top:78px}.float-two{right:-4px;bottom:75px}.spark{position:absolute;color:#a28cff;font-size:30px}.s1{right:12%;top:45px}.s2{left:8%;bottom:65px;font-size:24px}
+.strip{border-block:1px solid #eeebfa;background:#fff}.strip-inner{display:flex;align-items:center;justify-content:center;gap:45px;flex-wrap:wrap;padding:22px 0;color:#696581;font-size:11px;font-weight:800}.strip b{color:var(--violet);font-size:17px;margin-right:5px}
+section.content{padding:94px 0}.section-head{text-align:center;max-width:720px;margin:0 auto 42px}.kicker{color:var(--violet);font-size:11px;letter-spacing:1.7px;font-weight:900}.section-head h2,.story-copy h2,.cta h2{font-size:clamp(33px,4vw,49px);line-height:1.12;letter-spacing:-2px;margin:13px 0 15px;font-weight:900}.section-head p,.story-copy>p{color:var(--muted);font-size:13px;line-height:1.9}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}.feature{padding:25px 22px;border:1px solid var(--line);border-radius:21px;background:#fff;box-shadow:0 8px 25px #33206b05;transition:transform .2s,box-shadow .2s}.feature:hover{transform:translateY(-5px);box-shadow:0 17px 38px #33206b0e}.feature-icon{width:49px;height:49px;border-radius:16px;background:#eee9ff;color:var(--violet);display:grid;place-items:center;font-size:23px;margin-bottom:20px}.feature:nth-child(2) .feature-icon{background:#ffe8f6;color:#d04fa7}.feature:nth-child(3) .feature-icon{background:#e6f5ff;color:#3988c7}.feature:nth-child(4) .feature-icon{background:#e8f8ef;color:#309b69}.feature h3{font-size:15px;margin:0 0 8px}.feature p{font-size:11px;line-height:1.8;color:var(--muted);margin:0}
+.story{background:var(--bg)}.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:70px}.story-art{min-height:440px;position:relative;display:grid;place-items:center}.story-circle{position:absolute;width:340px;height:340px;border-radius:50%;background:linear-gradient(135deg,#e7e0ff,#fbdaf0)}.shot-stack{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.shot{width:180px;border-radius:20px;padding:5px;background:#fff;box-shadow:0 20px 45px #32216820;transform:rotate(-5deg)}.shot img{display:block;width:100%;border-radius:15px}.shot.second{width:160px;transform:translateY(38px) rotate(6deg)}.story-copy h2{max-width:490px}.story-copy>p{max-width:500px}.step-list{margin:25px 0 28px}.step{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid #e8e4f6}.step-num{flex:0 0 38px;height:38px;display:grid;place-items:center;background:#fff;border:1px solid #e8e2ff;color:var(--violet);border-radius:12px;font-size:11px;font-weight:900}.step h3{font-size:13px;margin:0 0 4px}.step p{font-size:11px;color:var(--muted);margin:0;line-height:1.7}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start}.gallery-card{border:1px solid var(--line);border-radius:20px;background:#fff;padding:12px;box-shadow:0 10px 30px #32216807}.gallery-card img{display:block;width:100%;height:370px;object-fit:cover;object-position:top;border-radius:13px;background:#f6f4ff;cursor:zoom-in;transition:transform .25s}.gallery-card img:hover{transform:scale(1.015)}.gallery-card h3{font-size:13px;margin:14px 5px 4px}.gallery-card p{font-size:10px;color:var(--muted);margin:0 5px 7px;line-height:1.7}.gallery-note{text-align:center;color:#928da7;font-size:10px;margin-top:22px}
+.privacy{background:linear-gradient(120deg,#f3efff,#fff4fb)}.privacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.privacy-copy h2{font-size:clamp(32px,4vw,47px);line-height:1.12;letter-spacing:-1.8px;margin:14px 0}.privacy-copy p{font-size:13px;color:var(--muted);line-height:1.9}.privacy-card{background:#fff;border:1px solid #eae4ff;border-radius:24px;padding:27px;box-shadow:0 18px 45px #3221680b}.privacy-row{display:flex;align-items:flex-start;gap:14px;padding:14px 0}.privacy-row+.privacy-row{border-top:1px solid #f0edf9}.privacy-row .icon{width:41px;height:41px;flex:0 0 41px;border-radius:13px;background:#eee9ff;display:grid;place-items:center;color:var(--violet);font-size:19px}.privacy-row h3{font-size:13px;margin:0 0 4px}.privacy-row p{font-size:11px;color:var(--muted);margin:0;line-height:1.7}
+.cta{padding:76px 0;text-align:center;color:#fff;background:radial-gradient(circle at 15% 10%,#8c6dff 0,transparent 35%),linear-gradient(115deg,#5636e6,#7549fa 60%,#a54dd9);position:relative;overflow:hidden}.cta:before,.cta:after{content:"";position:absolute;border:1px solid #ffffff2b;border-radius:50%;width:370px;height:370px;top:-220px;left:-100px}.cta:after{width:480px;height:480px;left:auto;top:auto;bottom:-360px;right:-90px}.cta .wrap{position:relative;z-index:1}.cta .kicker{color:#e7ddff}.cta h2{max-width:690px;margin:14px auto}.cta p{font-size:13px;color:#e7e0ff;margin-bottom:24px}.cta .btn{background:#fff;color:var(--violet)}.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.faq-grid h2{font-size:clamp(32px,4vw,45px);letter-spacing:-1.8px;line-height:1.1}.faq-grid .intro p{font-size:13px;color:var(--muted)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;border:0;background:none;text-align:left;display:flex;justify-content:space-between;gap:16px;padding:20px 0;color:var(--ink);font-weight:800;font-size:13px;cursor:pointer}.faq-q span:last-child{color:var(--violet);font-size:20px}.faq-a{font-size:12px;color:var(--muted);line-height:1.8;margin:0 20px 20px 0}
+footer{background:#fbfaff;border-top:1px solid #efecfa}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding:48px 0 35px}.footer-grid h3{font-size:12px;margin:0 0 13px}.footer-grid a,.future{display:block;color:#77728e;font-size:11px;margin:10px 0}.footer-grid p{max-width:240px;color:var(--muted);font-size:11px}.future{opacity:.72}.footer-bottom{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #eae7f7;padding:17px 0;color:#928da7;font-size:9px}
+.lightbox{display:none;position:fixed;inset:0;z-index:30;background:#15112beF;align-items:center;justify-content:center;padding:25px}.lightbox.open{display:flex}.lightbox img{max-height:90vh;max-width:min(92vw,500px);border-radius:12px;box-shadow:0 25px 80px #0006}.close-lightbox{position:absolute;top:20px;right:25px;background:white;border:0;border-radius:50%;width:42px;height:42px;font-size:25px;cursor:pointer}
+@media(max-width:900px){nav{gap:15px}.hero-grid{gap:20px}.feature-grid{grid-template-columns:repeat(2,1fr)}.story-grid{gap:30px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-card img{height:450px}.faq-grid{gap:35px}}
+@media(max-width:650px){.wrap{width:calc(100% - 34px)}header{height:72px}.menu{display:block}nav{display:none;position:absolute;top:65px;left:17px;right:17px;background:#fff;box-shadow:0 15px 35px #30205b18;border:1px solid var(--line);border-radius:18px;padding:20px;flex-direction:column;align-items:stretch;gap:16px}nav.open{display:flex}nav .btn{align-self:flex-start}.hero-grid{grid-template-columns:1fr;padding:43px 0 38px;gap:12px}h1{font-size:clamp(45px,12vw,62px);letter-spacing:-2.8px}.lead{font-size:13px}.actions{flex-direction:column;align-items:stretch}.actions .btn{text-align:center}.hero-art{min-height:420px}.orb{width:315px;height:315px}.device{width:220px;height:385px}.float-one{left:0;top:45px}.float-two{right:0;bottom:45px}.strip-inner{justify-content:flex-start;gap:12px;flex-direction:column;align-items:flex-start;padding:18px 0}.content{padding:68px 0!important}.section-head h2,.story-copy h2,.cta h2{font-size:35px;letter-spacing:-1.3px}.feature-grid{grid-template-columns:1fr}.feature{padding:22px;min-height:0}.story-grid{grid-template-columns:1fr;gap:25px}.story-art{min-height:350px;order:2}.story-copy{order:1}.story-circle{width:275px;height:275px}.shot{width:145px}.shot.second{width:130px}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.gallery-card{padding:7px;border-radius:15px}.gallery-card img{height:auto;aspect-ratio:9/16;object-fit:cover}.gallery-card h3{font-size:11px;margin-top:10px}.gallery-card p{font-size:9px}.privacy-grid{grid-template-columns:1fr;gap:20px}.privacy-card{padding:18px}.faq-grid{grid-template-columns:1fr;gap:18px}.footer-grid{grid-template-columns:1fr 1fr;gap:22px 16px}.footer-grid>div:first-child{grid-column:span 2}.footer-bottom{flex-direction:column;line-height:1.7}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+.about-strip {
+  padding: 58px 0;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.about-intro {
+  padding-right: 12px;
+}
+
+.about-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.about-intro h2 {
+  font-size: 30px;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  margin: 12px 0;
+}
+
+.about-intro p,
+.about-item p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-item {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.about-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--surface-soft);
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.about-item h3 {
+  font-size: 13px;
+  margin: 2px 0 7px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+  .about-strip {
+    padding: 42px 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-intro h2 {
+    font-size: 32px;
+  }
+}
+
+.help-section {
+  padding: 45px 0 70px;
+}
+
+.help-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.help-icon {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: var(--surface-soft);
+  color: var(--accent);
+  font-size: 26px;
+}
+
+.help-content {
+  flex: 1;
+}
+
+.help-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.help-content h2 {
+  margin: 7px 0;
+  font-size: 25px;
+}
+
+.help-content p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .help-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .help-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* Telling warm theme + selectable Default / Day / Night modes */
+:root {
+  color-scheme: light;
+  --bg: #fff8f3;
+  --surface: #fffdfb;
+  --surface-soft: #f9eee9;
+  --ink: #321b20;
+  --muted: #897477;
+  --accent: #7a203c;
+  --accent-soft: #efb08f;
+  --line: #ead7d0;
+  --white: #ffffff;
+  --violet: var(--accent);
+  --violet2: var(--accent-soft);
+  --page-bg: #fffaf7;
+  --header-bg: #fffdfbed;
+  --hero-bg: linear-gradient(125deg,#fff5ef 0%,#fff9f6 50%,#fbe9e7 100%);
+  --card-bg: #fffdfb;
+  --text-muted: #897477;
+  --logo-bg: linear-gradient(140deg,#7a203c,#b96766);
+}
+:root[data-theme="day"] {
+  color-scheme: light;
+  --bg: #fff8f3; --surface: #ffffff; --surface-soft: #f9eee9;
+  --ink: #321b20; --muted: #897477; --accent: #7a203c;
+  --accent-soft: #efb08f; --line: #ead7d0; --page-bg: #fffaf7;
+  --header-bg: #fffdfbed;
+  --hero-bg: linear-gradient(125deg,#fff2e9 0%,#fff9f6 52%,#f7e4e6 100%);
+  --card-bg: #ffffff; --text-muted: #897477;
+  --logo-bg: linear-gradient(140deg,#7a203c,#b96766);
+}
+:root[data-theme="night"] {
+  color-scheme: dark;
+  --bg: #120b0e; --surface: #1c1116; --surface-soft: #2a171f;
+  --ink: #fff5f1; --muted: #cbb8be; --accent: #efb08f;
+  --accent-soft: #d98d83; --line: #4b2a36; --page-bg: #10090c;
+  --header-bg: #160d11ed;
+  --hero-bg: linear-gradient(125deg,#1d1017 0%,#211118 55%,#321923 100%);
+  --card-bg: #1c1116; --text-muted: #cbb8be;
+  --logo-bg: linear-gradient(140deg,#76283f,#b96766);
+}
+body { background: var(--page-bg); color: var(--ink); }
+header { background: var(--header-bg); border-bottom-color: var(--line); }
+.logo { background: var(--logo-bg); color: #fff6f1; box-shadow: 0 8px 18px #6d26381c; }
+.brand span:last-child, nav a:not(.btn):hover { color: var(--accent); }
+nav { color: var(--muted); }
+.primary, .btn-primary { background: linear-gradient(115deg,#76283f,#b96766); color: #fff; box-shadow: 0 9px 20px #6d26381c; }
+.outline { border-color: var(--line); background: var(--surface); color: var(--accent); }
+.hero { background: var(--hero-bg); }
+.eyebrow { border-color: var(--line); color: var(--accent); background: var(--surface); }
+.eyebrow i { background: var(--accent-soft); }
+.gradient-text { background: linear-gradient(100deg,#76283f,#b96766,#efb08f); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lead, .fine, .section-head p, .story-copy>p, .feature p, .step p,
+.privacy-copy p, .privacy-row p, .faq-grid .intro p, .faq-a,
+.footer-grid a, .future, .footer-grid p { color: var(--text-muted); }
+.orb { background: linear-gradient(145deg,#f1cbbd,#e8aeb4); }
+.device { background: #29151d; }
+.device:before { background: #29151d; }
+.device-screen { background: #fff8f4; }
+.float-card { background: var(--surface); border-color: var(--line); color: var(--ink); }
+.float-card .mini, .feature-icon, .step-num, .privacy-row .icon { background: var(--surface-soft); color: var(--accent); }
+.strip, .feature, .gallery-card, .privacy-card, .help-card { background: var(--card-bg); }
+.strip { border-color: var(--line); }
+.strip-inner { color: var(--muted); }
+.strip b, .kicker, .about-label, .help-label { color: var(--accent); }
+.story, .about-strip { background: var(--bg); }
+.story-circle { background: linear-gradient(135deg,#f0d4ca,#e6b6bf); }
+.shot { background: var(--surface); }
+.privacy { background: linear-gradient(120deg,var(--bg),var(--surface-soft)); }
+.privacy-card { border-color: var(--line); }
+.cta { background: radial-gradient(circle at 15% 10%,#b96766 0,transparent 35%),linear-gradient(115deg,#6d2038,#8b344b 60%,#b96766); }
+.cta .btn { background: #fff5ef; color: #76283f; }
+.faq-q { color: var(--ink); }
+footer { background: var(--bg); border-top-color: var(--line); }
+.footer-bottom { border-top-color: var(--line); color: var(--muted); }
+.menu { color: var(--ink); }
+.theme-menu-wrap { position:relative; flex-shrink:0; }
+.theme-toggle { display:inline-flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink); padding:10px 14px; font-size:12px; font-weight:800; cursor:pointer; }
+.theme-toggle .theme-glyph { color:var(--accent); font-size:16px; line-height:1; }
+.theme-switcher { display:none; position:absolute; top:calc(100% + 9px); right:0; z-index:20; min-width:150px; padding:7px; border:1px solid var(--line); border-radius:15px; background:var(--surface); box-shadow:0 14px 35px #0002; }
+.theme-switcher.open { display:grid; gap:3px; }
+.theme-switcher button { display:flex; align-items:center; gap:10px; width:100%; border:0; border-radius:10px; background:transparent; color:var(--ink); padding:10px 12px; text-align:left; font-size:12px; font-weight:750; cursor:pointer; }
+.theme-switcher button:hover, .theme-switcher button[aria-pressed="true"] { background:var(--surface-soft); color:var(--accent); }
+.theme-switcher button .choice-mark { margin-left:auto; font-size:12px; }
+.theme-menu-wrap:focus-within .theme-toggle { outline:2px solid var(--accent-soft); outline-offset:2px; }
+.feature-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.feature { border-color:var(--line); }
+.feature:nth-child(n) .feature-icon { background:var(--surface-soft); color:var(--accent); }
+.feature-note { display:block; margin-top:12px; color:var(--accent); font-size:11px; font-weight:750; }
+.mature-feature { background:linear-gradient(145deg,var(--surface),var(--surface-soft)); }
+.help-section { background:var(--page-bg); }
+.help-card { border-color:var(--line); }
+.help-icon { background:var(--surface-soft); color:var(--accent); }
+.about-icon { background:var(--surface-soft); color:var(--accent); }
+@media(max-width:900px) { .feature-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:650px) {
+  .theme-menu-wrap { order:2; margin-left:auto; }
+  .theme-toggle { padding:9px 11px; font-size:11px; }
+  header { gap:10px; }
+  .feature-grid { grid-template-columns:1fr; }
+  nav { background:var(--surface); }
+}
+
+</style>
+</head>
+<body>
+<header class="wrap">
+ <a class="brand" href="#top" aria-label="Telling home"><span class="logo">✉</span>Telling<span>.</span></a>
+ <div class="theme-menu-wrap">
+  <button type="button" class="theme-toggle" id="themeToggle" aria-expanded="false" aria-controls="themeMenu"><span class="theme-glyph" aria-hidden="true">◐</span> Theme <span aria-hidden="true">⌄</span></button>
+  <div class="theme-switcher" id="themeMenu" role="group" aria-label="Choose website theme">
+   <button type="button" data-theme-choice="default" aria-pressed="true"><span aria-hidden="true">◐</span> Default <span class="choice-mark" aria-hidden="true"></span></button>
+   <button type="button" data-theme-choice="day" aria-pressed="false"><span aria-hidden="true">☀</span> Day <span class="choice-mark" aria-hidden="true"></span></button>
+   <button type="button" data-theme-choice="night" aria-pressed="false"><span aria-hidden="true">☾</span> Night <span class="choice-mark" aria-hidden="true"></span></button>
+  </div>
+ </div>
+ <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+ 
+<nav class="nav-links" id="nav">
+  <a href="#features">Features</a>
+  <a href="#how">How it works</a>
+  <a href="#screenshots">Preview</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<a
+  href="https://play.google.com/store/apps/details?id=com.telling.social"
+  class="btn btn-primary"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Get the app
+</a>
+
+</header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+ <div><span class="eyebrow"><i></i> YOUR THOUGHTS. YOUR SPACE.</span><h1>Speak freely.<br><span class="gradient-text">Stay anonymous.</span></h1>
+ <p class="lead">Some thoughts are easier to share when you can be yourself. Telling brings anonymous confessions, random chat rooms and new friends together in one place.</p>
+ <div class="actions"><a class="btn primary" data-playstore href="#">Explore on Google Play</a><a class="btn outline" href="#screenshots">Explore the app</a></div>
+ <p class="fine">✦ Share your thoughts, confessions and stories without revealing your identity.</p></div>
+ <div class="hero-art"><div class="orb"></div><span class="spark s1">✦</span><span class="spark s2">✧</span><div class="float-card float-one"><span class="mini">♡</span><span>Share your thoughts</span></div>
+ <div class="device"><div class="device-screen"><img src="assets/welcome-screen.jpg" alt="Telling app home feed with latest confessions and bottom navigation"></div></div>
+ <div class="float-card float-two"><span class="mini">☻</span><span>Meet new perspectives</span></div></div>
+</div></section>
+
+<section class="about-strip" id="about">
+  <div class="wrap about-grid">
+
+    <div class="about-intro">
+      <span class="about-label">ABOUT TELLING</span>
+      <h2>A little space<br>to be yourself.</h2>
+      <p>
+        Telling brings anonymous expression and social connections
+        together in one place. Discover a space to share your thoughts,
+        explore stories and connect with people.
+      </p>
+    </div>
+
+    <div class="about-item">
+      <span class="about-icon">✦</span>
+      <div>
+        <h3>Made for expression</h3>
+        <p>A place to share thoughts, stories and confessions.</p>
+      </div>
+    </div>
+
+    <div class="about-item">
+      <span class="about-icon">↗</span>
+      <div>
+        <h3>Easy to explore</h3>
+        <p>Discover the app's social experiences in one place.</p>
+      </div>
+    </div>
+
+    <div class="about-item">
+      <span class="about-icon">▣</span>
+      <div>
+        <h3>Mobile & desktop friendly</h3>
+        <p>Browse this introduction website on phones, tablets
+          and desktop screens.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="content wrap" id="features"><div class="section-head"><span class="kicker">MORE THAN JUST A CHAT</span><h2>Your thoughts have a place here.</h2><p>Explore the key experiences shown in Telling: share a confession, discover people, build connections and join conversations.</p></div>
+<div class="feature-grid">
+ <article class="feature"><div class="feature-icon">♡</div><h3>Anonymous confessions</h3><p>Put your thoughts, confessions and stories into words without revealing your identity in the confession itself.</p></article>
+ <article class="feature"><div class="feature-icon">☻</div><h3>Friends & connections</h3><p>Find friends, view profiles and start a one-to-one chat with people you connect with.</p></article>
+ <article class="feature"><div class="feature-icon">▤</div><h3>Random chat rooms</h3><p>Join rooms, see conversations and take part in chats around shared spaces and interests.</p></article>
+ <article class="feature"><div class="feature-icon">＋</div><h3>React & join in</h3><p>Browse the latest confessions, react to posts and explore the conversations happening in the community.</p></article>
+ <article class="feature mature-feature"><div class="feature-icon">◐</div><h3>Mature Content Filter</h3><p>Choose whether to show or hide 18+ Dark Fantasy confessions using the app’s mature content setting.</p><span class="feature-note">Your content preference, your choice.</span></article>
+</div></section>
+<section class="content story" id="story"><div class="wrap story-grid">
+ <div class="story-art"><div class="story-circle"></div><div class="shot-stack"><div class="shot"><img src="assets/confessions-screen.jpg" alt="Telling app create-confession screen with title, message, category and post button"></div><div class="shot second"><img src="assets/friends-screen.jpg" alt="Telling app profile screen with Golden Hearts, mature content setting and account options"></div></div></div>
+ <div class="story-copy"><span class="kicker">MADE FOR REAL CONVERSATIONS</span><h2>Confess. Connect.<br><span class="gradient-text">Find your people.</span></h2><p>Telling brings several social experiences into one app. Browse the latest confessions, connect with friends and step into chat rooms when you feel like talking.</p>
+ <div class="step-list"><div class="step"><span class="step-num">01</span><div><h3>Share what’s on your mind</h3><p>Use confessions to put thoughts and stories into words.</p></div></div><div class="step"><span class="step-num">02</span><div><h3>Build your circle</h3><p>View friend profiles and start chats from the Friends area.</p></div></div><div class="step"><span class="step-num">03</span><div><h3>Join the room</h3><p>Enter a chat room and take part in a shared conversation.</p></div></div></div>
+ <a class="btn primary" data-playstore href="#">Discover Telling on Google Play</a></div>
+</div></section>
+<section class="content wrap" id="screenshots"><div class="section-head"><span class="kicker">A LOOK INSIDE</span><h2>See Telling in action.</h2><p>Real app screens provided for this project, presented in a clean gallery. Select any image to view it larger.</p></div>
+<div class="gallery-grid">
+ <article class="gallery-card"><img src="assets/welcome-screen.jpg" alt="Telling app home feed showing real confession cards and bottom navigation" data-zoom><h3>Your confession feed</h3><p>The real home screen with recent confessions and reactions.</p></article>
+ <article class="gallery-card"><img src="assets/friends-screen.jpg" alt="Telling app profile screen with account settings and personal confessions" data-zoom><h3>Your profile</h3><p>Manage your profile, mature-content preference and account.</p></article>
+ <article class="gallery-card"><img src="assets/confessions-screen.jpg" alt="Telling app create-confession form with title, message and category" data-zoom><h3>Create a confession</h3><p>Write an anonymous post and choose its category.</p></article>
+ <article class="gallery-card"><img src="assets/chat-room-screen.jpg" alt="Telling app confession rooms screen with live rooms and Join buttons" data-zoom><h3>Confession rooms</h3><p>Explore voice rooms and join conversations anonymously.</p></article>
+</div></section>
+<section class="content privacy"><div class="wrap privacy-grid"><div class="privacy-copy"><span class="kicker">YOUR VOICE, YOUR CHOICE</span><h2>Share thoughtfully.<br><span class="gradient-text">Respect privacy.</span></h2><p>Telling’s welcome screen describes the app as a place to speak freely and stay anonymous. Remember that anonymity does not remove the need to protect personal information or treat others with respect.</p></div>
+<div class="privacy-card"><div class="privacy-row"><span class="icon">♙</span><div><h3>Think before you share</h3><p>Avoid posting passwords, addresses, phone numbers or other sensitive personal details.</p></div></div><div class="privacy-row"><span class="icon">♡</span><div><h3>Keep conversations kind</h3><p>Respect other people’s boundaries and contribute to a welcoming community.</p></div></div><div class="privacy-row"><span class="icon">⌕</span><div><h3>Check the official app details</h3><p>Review the app listing and its current policies before deciding what to share.</p></div></div></div></div></section>
+<section class="cta"><div class="wrap"><span class="kicker">YOUR NEXT CONVERSATION STARTS HERE</span><h2>Got something on your mind?</h2><p>Discover Telling: Confess & Chat on Google Play.</p><a class="btn" data-playstore href="#">Get Telling on Google Play</a></div></section>
+<section class="content wrap" id="faq"><div class="faq-grid"><div class="intro"><span class="kicker">QUICK ANSWERS</span><h2>A few things to know.</h2><p>Want to explore the app further? The Google Play listing is the place to check its current availability and official information.</p></div>
+<div><article class="faq-item"><button class="faq-q" aria-expanded="true"><span>What is Telling?</span><span>−</span></button><p class="faq-a">Telling is presented on Google Play as an app for anonymous confessions, random chat rooms and making new friends in one app.</p></article>
+<article class="faq-item"><button class="faq-q" aria-expanded="false"><span>What can I do in the app?</span><span>＋</span></button><p class="faq-a" hidden>Based on the supplied app screens, you can browse confessions, view friends and profiles, start chats and participate in chat rooms.</p></article>
+<article class="faq-item"><button class="faq-q" aria-expanded="false"><span>Does anonymous mean I should share anything?</span><span>＋</span></button><p class="faq-a" hidden>No. Avoid sharing sensitive personal information, and always treat other users respectfully. Check the app’s official privacy information for details.</p></article>
+<article class="faq-item"><button class="faq-q" aria-expanded="false"><span>Where can I download Telling?</span><span>＋</span></button><p class="faq-a" hidden>Use any “Get Telling” or Google Play button on this page to open the app listing.</p></article>
+ <article class="faq-item"><button class="faq-q" aria-expanded="false"><span>Can I filter mature content?</span><span>＋</span></button><p class="faq-a" hidden>The app profile screen includes a Mature Content setting to show or hide 18+ Dark Fantasy confessions. This website only describes the setting; it does not change the in-app preference.</p></article></div></div></section>
+
+<!-- Need Help Section -->
+<section class="help-section" id="support">
+  <div class="wrap help-card">
+    <div class="help-icon">✉</div>
+
+    <div class="help-content">
+      <span class="help-label">WE'RE HERE TO HELP</span>
+      <h2>Need help?</h2>
+      <p>
+        Have questions about Telling? Official support contact
+        details can be added here when available.
+      </p>
+    </div>
+
+    <a
+      class="btn btn-primary"
+      href="https://play.google.com/store/apps/details?id=com.telling.social"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Explore Telling
+    </a>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap footer-grid"><div><a class="brand" href="#top"><span class="logo">✉</span>Telling<span>.</span></a><p>Speak freely. Stay anonymous. Explore confessions, friends and chat rooms.</p></div><div><h3>Discover</h3><a href="#features">Features</a><a href="#story">The experience</a><a href="#screenshots">Screenshots</a></div><div><h3>Explore</h3><a href="#faq">FAQs</a><a href="#support">Need help?</a><a data-playstore href="#">Google Play listing</a></div><div><h3>Coming later</h3><span class="future">Instagram</span><span class="future">GitHub</span><span class="future">Support & policy links</span></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> Telling landing page concept.</span><span>App screenshots are shown for introduction purposes.</span></div></footer>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot preview"><button class="close-lightbox" id="closeLightbox" aria-label="Close image">×</button><img id="largeImage" alt="Enlarged Telling app screenshot"></div>
+<script>
+const themeButtons = document.querySelectorAll("[data-theme-choice]");
+const themeToggle = document.getElementById("themeToggle");
+const themeMenu = document.getElementById("themeMenu");
+const savedTheme = (() => { try { return localStorage.getItem("telling-theme"); } catch(e) { return null; } })();
+function applyTheme(choice) {
+  // Default intentionally uses the Night palette, regardless of device appearance.
+  const resolved = choice === "default" ? "night" : choice;
+  document.documentElement.dataset.theme = resolved;
+  themeButtons.forEach(button => {
+    const active = button.dataset.themeChoice === choice;
+    button.setAttribute("aria-pressed", String(active));
+    const mark = button.querySelector(".choice-mark");
+    if (mark) mark.textContent = active ? "✓" : "";
+  });
+  const glyph = themeToggle.querySelector(".theme-glyph");
+  if (glyph) glyph.textContent = resolved === "day" ? "☀" : "☾";
+  try { localStorage.setItem("telling-theme", choice); } catch(e) {}
+}
+function closeThemeMenu() { themeMenu.classList.remove("open"); themeToggle.setAttribute("aria-expanded", "false"); }
+themeToggle.addEventListener("click", () => {
+  const open = themeMenu.classList.toggle("open");
+  themeToggle.setAttribute("aria-expanded", String(open));
+});
+themeButtons.forEach(button => button.addEventListener("click", () => {
+  applyTheme(button.dataset.themeChoice);
+  closeThemeMenu();
+}));
+document.addEventListener("click", event => {
+  if (!event.target.closest(".theme-menu-wrap")) closeThemeMenu();
+});
+document.addEventListener("keydown", event => { if (event.key === "Escape") closeThemeMenu(); });
+applyTheme("default");
+
+const PLAY_STORE_URL="https://play.google.com/store/apps/details?id=com.telling.social";
+document.querySelectorAll("[data-playstore]").forEach(a=>{a.href=PLAY_STORE_URL;a.target="_blank";a.rel="noopener noreferrer";});
+document.getElementById("year").textContent=new Date().getFullYear();
+const menu=document.getElementById("menu"),nav=document.getElementById("nav");
+menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"×":"☰";});
+nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="☰";}));
+document.querySelectorAll(".faq-q").forEach(b=>b.addEventListener("click",()=>{const p=b.nextElementSibling,open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",String(!open));p.hidden=open;b.lastElementChild.textContent=open?"＋":"−";}));
+const lightbox=document.getElementById("lightbox"),large=document.getElementById("largeImage");
+document.querySelectorAll("[data-zoom]").forEach(img=>img.addEventListener("click",()=>{large.src=img.src;large.alt=img.alt;lightbox.classList.add("open");}));
+function closeBox(){lightbox.classList.remove("open");large.src="";}
+document.getElementById("closeLightbox").addEventListener("click",closeBox);
+lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeBox();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeBox();});
+</script>
+</body></html>
